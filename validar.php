@@ -9,7 +9,7 @@ $_SESSION['usuario']=$usuario;
 include('db.php');
 //la consulta almacena si de la base de datos coincide el usuario y contraseña
 $consulta="SELECT * FROM establecimiento where usuario='$usuario' and Contraseña='$contraseña";
-$resultado=mysql_query($conexion,$consulta);
+$resultado=mysqli_query($conexion,$consulta);
 
 $filas=mysqli_num_rows($resultado);
 if($filas){
@@ -24,5 +24,5 @@ if($filas){
     <h1 class="error">Usuario no valido o no registrado</h1>
     <?php
 }
-mysql_free_results($resultado);
+mysqli_free_results($resultado);
 mysqli_closet($conexion);

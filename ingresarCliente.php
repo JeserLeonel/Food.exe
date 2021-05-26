@@ -11,7 +11,7 @@ $_SESSION['usuario']=$usuario;
 //se incluye el archivo que hace la conexion con la base de datos
 include('db.php');
 $insertar="INSERT INTO cliente ('contraseña','usuario','telefono') VALUES('$contraseña','$usuario','$telefono')";
-$resultado=mysql_query($conexion,$insertar);
+$resultado=mysqli_query($conexion,$insertar);
 $filas=mysqli_num_rows($resultado);
 if($filas){
     echo "correcto";
@@ -27,5 +27,5 @@ if($filas){
     <?php
 }
 
-mysql_free_results($resultado);
-mysqli_closet($conexion);
+"mysqli_free_results"($resultado);
+"mysqli_closet"($conexion);
